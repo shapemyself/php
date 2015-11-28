@@ -1,0 +1,11 @@
+there are 3diff[s], next is the detail differences.
++++++++++++++++
+---content->ext->phone
+		>010-59928888
+		<010 59928888
+---content->Name
+		>百度大厦
+		<
+---content->name
+		>
+		<百度大厦

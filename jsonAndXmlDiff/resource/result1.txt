@@ -1,0 +1,16 @@
+输出如下的结果:
+left line no: 3, right line no:4
+there are 4diff[s] in 3line[s], next is the diff detail differences:
++++++++++++++++++
+---line1:format
+		>"example1"
+		<"example2"
+---line1:content->[0]->align
+		>"center"
+		<"left"
+---line3:
+		>{"format":"this is the same line"}
+		<""
+---line4:
+		>""
+		<{"format":"hhhhhhh"}
