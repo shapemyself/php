@@ -110,3 +110,32 @@ function get_allfiles($path,&$files) {
     }
 }
 
+
+/**
+ * 取文件最后$n行
+ * @param string $filename 文件路径
+ * @param int $n 最后几行
+ * @return mixed false表示有错误，成功则返回字符串
+ */
+function file_last_lines($filename, $n) {
+	if (!$fp = fopen($filename, 'r')) {
+		return false;
+	}
+	$pos = -2;
+	$eof = "";
+	$str = "";
+	while ($n > 0) {
+		while ($eof != "\n") {
+			if (!fseek($fp, $pos, SEEK_END)) {
+				$eof = fgetc($fp);
+				$pos--;
+			} else {
+				break;
+			}
+		}
+		$str = fgets($fp) . $str;
+		$eof = "";
+		$n--;
+	}
+	return $str;
+}
